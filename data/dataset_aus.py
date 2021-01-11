@@ -96,7 +96,7 @@ class AusDataset(DatasetBase):
 
     def _read_conds(self, file_path):
         with open(file_path, 'rb') as f:
-            return pickle.load(f)
+            return pickle.load(f, encoding='latin1')
 
     def _get_cond_by_id(self, id):
         if id in self._conds:
