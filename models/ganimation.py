@@ -317,21 +317,21 @@ class GANimation(BaseModel):
     def get_current_errors(self):
         loss_dict = OrderedDict([('g_fake', self._loss_g_fake.data[0]),
                                  ('g_cond', self._loss_g_cond.data[0]),
-                                 ('g_mskd_fake', self._loss_g_masked_fake.data[0]),
-                                 ('g_mskd_cond', self._loss_g_masked_cond.data[0]),
-                                 ('g_cyc', self._loss_g_cyc.data[0]),
+                                 ('g_mskd_fake', self._loss_g_masked_fake.data),
+                                 ('g_mskd_cond', self._loss_g_masked_cond.data),
+                                 ('g_cyc', self._loss_g_cyc.data),
                                  ('g_rgb', self._loss_rec_real_img_rgb.data[0]),
                                  ('g_rgb_un', self._loss_g_unmasked_rgb.data[0]),
                                  ('g_rgb_s', self._loss_g_fake_imgs_smooth.data[0]),
-                                 ('g_m1', self._loss_g_mask_1.data[0]),
-                                 ('g_m2', self._loss_g_mask_2.data[0]),
-                                 ('g_m1_s', self._loss_g_mask_1_smooth.data[0]),
-                                 ('g_m2_s', self._loss_g_mask_2_smooth.data[0]),
+                                 ('g_m1', self._loss_g_mask_1.data),
+                                 ('g_m2', self._loss_g_mask_2.data),
+                                 ('g_m1_s', self._loss_g_mask_1_smooth.data),
+                                 ('g_m2_s', self._loss_g_mask_2_smooth.data),
                                  ('g_idt', self._loss_g_idt.data[0]),
-                                 ('d_real', self._loss_d_real.data[0]),
-                                 ('d_cond', self._loss_d_cond.data[0]),
-                                 ('d_fake', self._loss_d_fake.data[0]),
-                                 ('d_gp', self._loss_d_gp.data[0])])
+                                 ('d_real', self._loss_d_real.data),
+                                 ('d_cond', self._loss_d_cond.data),
+                                 ('d_fake', self._loss_d_fake.data),
+                                 ('d_gp', self._loss_d_gp.data)])
 
         return loss_dict
 
